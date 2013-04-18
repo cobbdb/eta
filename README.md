@@ -7,13 +7,13 @@ The symbol for the Greek capital letter eta is H. Eta is often used in math as t
 
 This engine was designed for prototypes and small-scale web applications that need to be developed and deployed quickly with minimal setup. Since Eta does not use custom template tags, projects can be easily turned over to a more robust framework like Cake or Yii at a later date.
 
-### INSTALLATION
+### Installation
 * Copy this file into a directory of your choosing and add the require_once to the file that is using Eta.
-* The default directory for Eta is DocumentRoot/eta/ , but may be changed via <code>H::setHome()</code>.
-* The default page template for Eta is base.view , but this may be changed via <code>H::setBase()</code>.
+* The default directory for Eta is DocumentRoot/eta/ , but may be changed via ```H::setHome()```.
+* The default page template for Eta is base.view , but this may be changed via ```H::setBase()```.
 
-### USAGE
-##### Here is a simple hello world example:
+### Usage
+###### Here is a simple hello world example:
 > ```php
 // index.php
 require_once("eta.php");
@@ -27,31 +27,54 @@ echo H::render(null, [
 Hello <?= $name ?>!
 ```
 
-##### Example of a template include:
+###### Example of a template include:
 > ```php
 <div id="myWidget">
     <?= H::render("neatWidget.html") ?>
 </div>
 ```
 
-##### To set your default template directory:
-> ```php
-// Default is DocumentRoot/eta/
-H::setHome("/path/to/my/templates");
+
+## render(path, [model], [grounded]);
+Render a template without auto-responding.
+
+**Parameters**
+* *String* path - Filename of the template to render.
+* *Array* [model] - Data to inject into the template.
+* *Boolean* [grounded] - False to use a literal path and bypass the home directory.
+
+**Returns** {String}  
+**Throws** {MissingTemplateException}
+
+```php
+// The 'grounded' argument can bypass the home directory
+echo H::render("/path/to/my/template.html", [], false);
 ```
 
-##### Here's how to set a new base template:
-> ```php
+
+## setHome(path)
+Set a new default views directory.
+
+**Paramters**
+* *String* path
+
+```php
+// Default is DocumentRoot/eta/
+H::setHome("/path/to/my/templates/");
+```
+
+
+## setBase(path)
+Set a new default base page template.
+
+**Paramters**
+* *String* path Complete path to new base template.
+
+```php
 // Default is DocumentRoot/eta/base.view
 H::setBase("/path/to/myBase.html");
 // Now H::render(null) will use a new base template!
 ```
 
-##### This template lies outside of my views directory:
-> ```php
-// The 'grounded' argument can bypass the home directory
-echo H::render("/path/to/my/view.html", [], false);
-```
-
 ---
-By Dan Cobb: cobbdb@gmail.com - [petitgibier.sytes.net](http://petitgibier.sytes.net)
+By Dan Cobb: <cobbdb@gmail.com> - [petitgibier.sytes.net](http://petitgibier.sytes.net)
