@@ -33,7 +33,7 @@ final class H {
     /**
      * Establish the default base page template.
      */
-    private static $base = "base.view";
+    private static $base;
     
     /**
      * Work-around for php rule against evaluation in static declaration.
@@ -41,6 +41,7 @@ final class H {
      */
     public static function init() {
         self::$home = $_SERVER["DOCUMENT_ROOT"] . "/eta/";
+        self::$base = self::$home . "base.view";
     }
     
     /**
@@ -53,7 +54,7 @@ final class H {
     
     /**
      * Set a new default base page template.
-     * @param {String} path
+     * @param {String} path Complete path to new base template.
      */
     public static function setBase($path) {
         self::$base = $path;
@@ -65,10 +66,11 @@ final class H {
      * @param {Array} [model] Data to inject into the template.
      * @param {Boolean} [grounded] False to use a literal path and bypass the home directory.
      * @returns {String}
+     * @throws {MissingTemplateException}
      */
     public static function render($path, $model = Array(), $grounded = true) {
         if (!isset($path)) {
-            $path = self::$home . self::$base;
+            $path = self::$base;
         } else if ($grounded) {
             $path = self::$home . $path;
         }
