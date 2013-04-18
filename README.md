@@ -35,13 +35,13 @@ Hello <?= $name ?>!
 ```
 
 
-## render(path, [model], [grounded]);
+## render(path, [model], [grounded])
 Render a template without auto-responding.
 
 **Parameters**
-* *String* path - Filename of the template to render.
-* *Array* [model] - Data to inject into the template.
-* *Boolean* [grounded] - False to use a literal path and bypass the home directory.
+* {String} path - Filename of the template to render.
+* {Array} [model] - Data to inject into the template.
+* {Boolean} [grounded] - False to use a literal path and bypass the home directory.
 
 **Returns** {String}  
 **Throws** {MissingTemplateException}
@@ -56,7 +56,7 @@ $myView = H::render("myTemplate.html", [], false);
 Set a new default views directory.
 
 **Paramters**
-* *String* path
+* {String} path
 
 ```php
 // Default is DocumentRoot/eta/
@@ -68,7 +68,7 @@ H::setHome("/path/to/my/templates/");
 Set a new default base page template.
 
 **Paramters**
-* *String* path Complete path to new base template.
+* {String} path - Complete path to new base template.
 
 ```php
 // Default is DocumentRoot/eta/base.view
