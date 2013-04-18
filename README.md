@@ -48,7 +48,7 @@ Render a template without auto-responding.
 
 ```php
 // The 'grounded' argument can bypass the home directory
-echo H::render("myTemplate.html", [], false);
+$myView = H::render("myTemplate.html", [], false);
 ```
 
 
