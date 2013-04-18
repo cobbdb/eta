@@ -19,7 +19,7 @@
  * @author Dan Cobb
  * @see http://proccli.com/2010/03/dead-simple-php-template-rendering/
  * @see //www.github.com/cobbdb/eta
- * @since 2.0.0
+ * @since 2.0.1
  */
 
 class MissingTemplateException extends Exception {
@@ -29,11 +29,19 @@ final class H {
     /**
      * Establish the default views directory.
      */
-    private static $home = $_SERVER["DOCUMENT_ROOT"] . "/eta/";
+    private static $home;
     /**
      * Establish the default base page template.
      */
     private static $base = "base.view";
+    
+    /**
+     * Work-around for php rule against evaluation in static declaration.
+     * Automatically called immediately after class definition.
+     */
+    public static function init() {
+        self::$home = $_SERVER["DOCUMENT_ROOT"] . "/eta/";
+    }
     
     /**
      * Set a new default views directory.
@@ -75,3 +83,5 @@ final class H {
         }
     }
 }
+// Work-around for php rule against evaluation in static declaration.
+H::init();
