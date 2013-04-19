@@ -1,6 +1,6 @@
 # Eta
 ### A lightweight and transparent templating engine designed for prototypes and small web applications.
-Version **2.0.2**
+Version **2.0.3**
 
 ---
 The symbol for the Greek capital letter eta is H. Eta is often used in math as the symbol for efficiency.
@@ -79,7 +79,7 @@ H::setBase("/path/to/myBase.html");
 
 
 ## reset()
-Reset Eta back to default home directory and base template.
+Reset Eta back to default home directory.
 
 ```php
 // Use special templates directory temporarily.
