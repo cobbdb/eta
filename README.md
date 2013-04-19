@@ -1,16 +1,16 @@
 # Eta
-### A lightweight and transparent templating engine designed for prototypes and small web applications.
+### A lightweight PHP templating engine designed for rapid prototypes and small-scale web applications.
 Version **2.0.3**
 
 ---
 The symbol for the Greek capital letter eta is H. Eta is often used in math as the symbol for efficiency.
 
-This engine was designed for prototypes and small-scale web applications that need to be developed and deployed quickly with minimal setup. Since Eta does not use custom template tags, projects can be easily turned over to a more robust framework like Cake or Yii at a later date.
+This engine was designed for prototypes and small-scale web applications that need to be developed and deployed quickly with minimal setup. Since Eta does not use custom template tags, projects can be easily turned over to a more robust framework like Cake or Yii in the future.
 
 ### Installation
 * Copy this file into a directory of your choosing and add the require_once to the file that is using Eta.
-* The default directory for Eta is ./ , but may be changed via ```H::setHome()```.
-* The default page template for Eta is ./base.view , but this may be changed via ```H::setBase()```.
+* The default directory for Eta is ```./```, but may be changed via ```H::setHome()```.
+* The default page template for Eta is ```./base.view```, but this may be changed via ```H::setBase()```.
 
 ### Usage
 ###### Here is a simple hello world example:

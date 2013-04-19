@@ -62,7 +62,7 @@ class H {
     
     /**
      * Render a template without auto-responding.
-     * @param {String} path Filename of the template to render.
+     * @param {String} path Path to the template or null to use the base template.
      * @param {Array} [model] Data to inject into the template.
      * @param {Boolean} [grounded] False to use a literal path and bypass the home directory.
      * @returns {String}
