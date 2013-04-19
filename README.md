@@ -39,7 +39,7 @@ Hello <?= $name ?>!
 Render a template without auto-responding.
 
 **Parameters**
-* {String} path - Filename of the template to render.
+* {String} path - Path to the template or null to use the base template.
 * {Array} [model] - Data to inject into the template.
 * {Boolean} [grounded] - False to use a literal path and bypass the home directory.
 
