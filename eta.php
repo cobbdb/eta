@@ -8,8 +8,8 @@
  * 
  * ~ INSTALLATION ~
  * Copy this file into a directory of your choosing and add the require_once to the file that is using Eta.
- * The default directory for Eta is DocumentRoot/eta/ , but may be changed via H::setHome().
- * The default page template for Eta is base.view , but this may be changed via H::setBase().
+ * The default directory for Eta is ./ , but may be changed via H::setHome().
+ * The default page template for Eta is ./base.view , but this may be changed via H::setBase().
  * 
  * @usage
  * echo H::render(null, [
@@ -19,37 +19,38 @@
  * @author Dan Cobb
  * @see http://proccli.com/2010/03/dead-simple-php-template-rendering/
  * @see //www.github.com/cobbdb/eta
- * @since 2.0.1
+ * @version 2.0.2
  */
 
 class MissingTemplateException extends Exception {
 }
 
-final class H {
-    /**
-     * Establish the default views directory.
-     */
-    private static $home;
-    /**
-     * Establish the default base page template.
-     */
-    private static $base;
+class H {
+    /** Current views directory. */
+    private static $home = "./";
+    /** Default views directory. */
+    private static $defaultHome = "./";
+    /** Current base page template. */
+    private static $base = "./base.view";
     
     /**
-     * Work-around for php rule against evaluation in static declaration.
-     * Automatically called immediately after class definition.
+     * Reset Eta back to default home directory and base template.
      */
-    public static function init() {
-        self::$home = $_SERVER["DOCUMENT_ROOT"] . "/eta/";
+    public static function reset() {
+        self::$home = self::$defaultHome;
         self::$base = self::$home . "base.view";
     }
     
     /**
      * Set a new default views directory.
      * @param {String} path
+     * @param {Boolean} [remember] True to retain this as the default directory.
      */
-    public static function setHome($path) {
+    public static function setHome($path, $remember = false) {
         self::$home = $path;
+        if ($remember) {
+            self::$defaultHome = $path;
+        }
     }
     
     /**
@@ -85,5 +86,3 @@ final class H {
         }
     }
 }
-// Work-around for php rule against evaluation in static declaration.
-H::init();
