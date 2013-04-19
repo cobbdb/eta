@@ -34,11 +34,10 @@ class H {
     private static $base = "./base.view";
     
     /**
-     * Reset Eta back to default home directory and base template.
+     * Reset Eta back to default home directory.
      */
     public static function reset() {
         self::$home = self::$defaultHome;
-        self::$base = self::$home . "base.view";
     }
     
     /**
