@@ -91,5 +91,5 @@ H::reset();
 ```
 
 ---
-By Dan Cobb: <cobbdb@gmail.com> - [petitgibier.sytes.net](http://petitgibier.sytes.net)
+By Dan Cobb: <cobbdb@gmail.com> - [petitgibier.sytes.net](http://petitgibier.sytes.net)  
 License: MIT
