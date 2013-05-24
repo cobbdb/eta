@@ -16,7 +16,7 @@ This engine was designed for prototypes and small-scale web applications that ne
 ###### Here is a simple hello world example:
 > ```php
 // index.php
-require_once "eta.php";
+require_once "H.php";
 $who = "World";
 echo H::render(null, [
     "name" => $who
