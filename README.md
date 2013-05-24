@@ -1,6 +1,6 @@
 # Eta
 ### A lightweight PHP templating engine designed for rapid prototypes and small-scale web applications.
-Version **2.0.3**
+Version **2.0.4**
 
 ---
 The symbol for the Greek capital letter eta is H. Eta is often used in math as the symbol for efficiency.

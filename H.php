@@ -17,9 +17,8 @@
  * ]);
  * 
  * @author Dan Cobb
- * @see http://proccli.com/2010/03/dead-simple-php-template-rendering/
  * @see //www.github.com/cobbdb/eta
- * @version 2.0.3
+ * @version 2.0.4
  */
 
 class MissingTemplateException extends Exception {
