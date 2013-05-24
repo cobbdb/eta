@@ -1,7 +1,7 @@
 <?php
 
 /**
- * eta.php
+ * H.php
  * 
  * Eta is a lightweight and transparent templating engine designed for prototypes and small web applications.
  * The symbol for the Greek capital letter eta is H. Eta is often used in math as the symbol for efficiency.
