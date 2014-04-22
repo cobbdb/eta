@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Eta by cobbdb</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/cobbdb/eta">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Eta</h1>
+            <h2>A lightweight PHP templating engine.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/cobbdb/eta/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/cobbdb/eta/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <p>The symbol for the Greek capital letter eta is H. Eta is often used in math as the symbol for efficiency.</p>
+
+<p>This engine was designed for prototypes and small-scale web applications that need to be developed and deployed quickly with minimal setup. Since Eta does not use custom template tags, projects can be easily turned over to a more robust framework like Cake or Yii in the future.</p>
+
+<h3>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h3>
+
+<ul>
+<li>Copy this file into a directory of your choosing and add the require_once to the file that is using Eta.</li>
+<li>The default directory for Eta is <code>./</code>, but may be changed via <code>H::setHome()</code>.</li>
+<li>The default page template for Eta is <code>./base.view</code>, but this may be changed via <code>H::setBase()</code>.</li>
+</ul><h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<h6>
+<a name="here-is-a-simple-hello-world-example" class="anchor" href="#here-is-a-simple-hello-world-example"><span class="octicon octicon-link"></span></a>Here is a simple hello world example:</h6>
+
+<blockquote>
+<div class="highlight highlight-php"><pre><span class="c1">// index.php</span>
+<span class="k">require_once</span> <span class="s2">"H.php"</span><span class="p">;</span>
+<span class="nv">$who</span> <span class="o">=</span> <span class="s2">"World"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">H</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="nv">$who</span>
+<span class="p">]);</span>
+</pre></div>
+
+<div class="highlight highlight-php"><pre><span class="c1">// base.view</span>
+<span class="nx">Hello</span> <span class="o">&lt;?=</span> <span class="nv">$name</span> <span class="cp">?&gt;</span><span class="x">!</span>
+</pre></div>
+</blockquote>
+
+<h6>
+<a name="example-of-a-template-include" class="anchor" href="#example-of-a-template-include"><span class="octicon octicon-link"></span></a>Example of a template include:</h6>
+
+<blockquote>
+<div class="highlight highlight-php"><pre><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"myWidget"</span><span class="o">&gt;</span>
+    <span class="o">&lt;?=</span> <span class="nx">H</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s2">"neat/widget.html"</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/div&gt;</span>
+</pre></div>
+</blockquote>
+
+<h2>
+<a name="renderpath-model-grounded" class="anchor" href="#renderpath-model-grounded"><span class="octicon octicon-link"></span></a>render(path, [model], [grounded])</h2>
+
+<p>Render a template without auto-responding.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li>{String} path - Path to the template or null to use the base template.</li>
+<li>{Array} [model] - Data to inject into the template.</li>
+<li>{Boolean} [grounded] - False to use a literal path and bypass the home directory.</li>
+</ul><p><strong>Returns</strong> {String}<br><strong>Throws</strong> {MissingTemplateException}</p>
+
+<div class="highlight highlight-php"><pre><span class="c1">// The 'grounded' argument can bypass the home directory</span>
+<span class="nv">$myView</span> <span class="o">=</span> <span class="nx">H</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s2">"../my/template.html"</span><span class="p">,</span> <span class="p">[],</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+
+<h2>
+<a name="sethomepath-remember" class="anchor" href="#sethomepath-remember"><span class="octicon octicon-link"></span></a>setHome(path, [remember])</h2>
+
+<p>Set a new default views directory.</p>
+
+<p><strong>Paramters</strong></p>
+
+<ul>
+<li>{String} path</li>
+<li>{Boolean} [remember] - True to retain this as the default directory for use with reset().</li>
+</ul><div class="highlight highlight-php"><pre><span class="c1">// Default is the same directory in which eta.php file is placed.</span>
+<span class="nx">H</span><span class="o">::</span><span class="na">setHome</span><span class="p">(</span><span class="s2">"/path/to/my/templates/"</span><span class="p">);</span>
+</pre></div>
+
+<h2>
+<a name="setbasepath" class="anchor" href="#setbasepath"><span class="octicon octicon-link"></span></a>setBase(path)</h2>
+
+<p>Set a new default base page template.</p>
+
+<p><strong>Paramters</strong></p>
+
+<ul>
+<li>{String} path - Complete path to new base template.</li>
+</ul><div class="highlight highlight-php"><pre><span class="c1">// Default is ./base.view</span>
+<span class="nx">H</span><span class="o">::</span><span class="na">setBase</span><span class="p">(</span><span class="s2">"/path/to/myBase.html"</span><span class="p">);</span>
+<span class="c1">// Now H::render(null) will use a new base template!</span>
+</pre></div>
+
+<h2>
+<a name="reset" class="anchor" href="#reset"><span class="octicon octicon-link"></span></a>reset()</h2>
+
+<p>Reset Eta back to default home directory.</p>
+
+<div class="highlight highlight-php"><pre><span class="c1">// Use special templates directory temporarily.</span>
+<span class="nx">H</span><span class="o">::</span><span class="na">setHome</span><span class="p">(</span><span class="s2">"../path/to/other/templates/"</span><span class="p">);</span>
+<span class="nx">H</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s2">"some/newThing.tpl"</span><span class="p">);</span>
+<span class="nx">H</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s2">"and/another/template.html"</span><span class="p">);</span>
+<span class="c1">// Now reset home back to default for rest of project!</span>
+<span class="nx">H</span><span class="o">::</span><span class="na">reset</span><span class="p">();</span>
+</pre></div>
+
+<hr><p>By Dan Cobb: <a href="mailto:cobbdb@gmail.com">cobbdb@gmail.com</a> - <a href="http://petitgibier.sytes.net">petitgibier.sytes.net</a><br>
+License: MIT</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/cobbdb">cobbdb</a> can be found on <a href="https://github.com/cobbdb/eta">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
