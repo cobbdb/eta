@@ -1,91 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
-
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
     <title>Eta by cobbdb</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-    <a id="forkme_banner" href="https://github.com/cobbdb/eta">View on GitHub</a>
-    <div class="shell">
-
+    <div class="wrapper">
       <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Eta</h1>
-            <h2>Simple and Efficient PHP Templating</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
+        <h1>Eta</h1>
+        <p>Simple and Efficient PHP Templating</p>
+
+        <p class="view"><a href="https://github.com/cobbdb/eta">View the Project on GitHub <small>cobbdb/eta</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/cobbdb/eta/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/cobbdb/eta/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/cobbdb/eta">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
-
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/cobbdb/eta/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/cobbdb/eta/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
-
-
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
-        <p><a href="http://en.wikipedia.org/wiki/Eta">Eta</a> is designed for prototypes and small-scale web applications that need to be developed and deployed quickly with minimal setup. Since Eta does not use custom template tags, projects can be easily turned over to more robust frameworks like Cake or Yii.</p>
+      <section>
+        <h1>
+<a id="eta" class="anchor" href="#eta" aria-hidden="true"><span class="octicon octicon-link"></span></a>Eta</h1>
 
 <h3>
-<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h3>
+<a id="a-lightweight-php-templating-engine-designed-for-rapid-prototypes-and-small-scale-web-applications" class="anchor" href="#a-lightweight-php-templating-engine-designed-for-rapid-prototypes-and-small-scale-web-applications" aria-hidden="true"><span class="octicon octicon-link"></span></a>A lightweight PHP templating engine designed for rapid prototypes and small-scale web applications.</h3>
+
+<p>Version <strong>2.0.4</strong></p>
+
+<hr>
+
+<p>The symbol for the Greek capital letter eta is H. Eta is often used in math as the symbol for efficiency.</p>
+
+<p>This engine was designed for prototypes and small-scale web applications that need to be developed and deployed quickly with minimal setup. Since Eta does not use custom template tags, projects can be easily turned over to a more robust framework like Cake or Yii in the future.</p>
+
+<h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
 
 <ul>
+<li>Copy this file into a directory of your choosing and add the require_once to the file that is using Eta.</li>
 <li>The default directory for Eta is <code>./</code>, but may be changed via <code>H::setHome()</code>.</li>
 <li>The default page template for Eta is <code>./base.view</code>, but this may be changed via <code>H::setBase()</code>.</li>
-</ul><h3>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+</ul>
+
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
 
 <h6>
-<a name="here-is-a-simple-hello-world-example" class="anchor" href="#here-is-a-simple-hello-world-example"><span class="octicon octicon-link"></span></a>Here is a simple hello world example:</h6>
+<a id="here-is-a-simple-hello-world-example" class="anchor" href="#here-is-a-simple-hello-world-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Here is a simple hello world example:</h6>
 
 <blockquote>
-<div class="highlight highlight-php"><pre><span class="c1">// index.php</span>
-<span class="k">require_once</span> <span class="s2">"H.php"</span><span class="p">;</span>
-<span class="nv">$who</span> <span class="o">=</span> <span class="s2">"World"</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nx">H</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="p">[</span>
-    <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="nv">$who</span>
-<span class="p">]);</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-c">// index.php</span></span>
+<span class="pl-s2"><span class="pl-k">require_once</span> <span class="pl-s1"><span class="pl-pds">"</span>H.php<span class="pl-pds">"</span></span>;</span>
+<span class="pl-s2"><span class="pl-vo">$who</span> <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>World<span class="pl-pds">"</span></span>;</span>
+<span class="pl-s2"><span class="pl-s3">echo</span> <span class="pl-s3">H</span><span class="pl-k">::</span>render(<span class="pl-c1">null</span>, [</span>
+<span class="pl-s2">    <span class="pl-s1"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> <span class="pl-vo">$who</span></span>
+<span class="pl-s2">]);</span></pre></div>
 
-<div class="highlight highlight-php"><pre><span class="c1">// base.view</span>
-<span class="nx">Hello</span> <span class="o">&lt;?=</span> <span class="nv">$name</span> <span class="cp">?&gt;</span><span class="x">!</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-c">// base.view</span></span>
+<span class="pl-s2"><span class="pl-c1">Hello</span> <span class="pl-k">&lt;</span>?<span class="pl-k">=</span> <span class="pl-vo">$name</span> </span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>!</pre></div>
 </blockquote>
 
 <h6>
-<a name="example-of-a-template-include" class="anchor" href="#example-of-a-template-include"><span class="octicon octicon-link"></span></a>Example of a template include:</h6>
+<a id="example-of-a-template-include" class="anchor" href="#example-of-a-template-include" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of a template include:</h6>
 
 <blockquote>
-<div class="highlight highlight-php"><pre><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"myWidget"</span><span class="o">&gt;</span>
-    <span class="o">&lt;?=</span> <span class="nx">H</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s2">"neat/widget.html"</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="x">&lt;/div&gt;</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-k">&lt;</span><span class="pl-c1">div</span> <span class="pl-c1">id</span><span class="pl-k">=</span><span class="pl-s1"><span class="pl-pds">"</span>myWidget<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span></span>
+<span class="pl-s2">    <span class="pl-k">&lt;</span>?<span class="pl-k">=</span> <span class="pl-s3">H</span><span class="pl-k">::</span>render(<span class="pl-s1"><span class="pl-pds">"</span>neat/widget.html<span class="pl-pds">"</span></span>) </span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 </blockquote>
 
 <h2>
-<a name="renderpath-model-grounded" class="anchor" href="#renderpath-model-grounded"><span class="octicon octicon-link"></span></a>render(path, [model], [grounded])</h2>
+<a id="renderpath-model-grounded" class="anchor" href="#renderpath-model-grounded" aria-hidden="true"><span class="octicon octicon-link"></span></a>render(path, [model], [grounded])</h2>
 
 <p>Render a template without auto-responding.</p>
 
@@ -95,14 +89,16 @@
 <li>{String} path - Path to the template or null to use the base template.</li>
 <li>{Array} [model] - Data to inject into the template.</li>
 <li>{Boolean} [grounded] - False to use a literal path and bypass the home directory.</li>
-</ul><p><strong>Returns</strong> {String}<br><strong>Throws</strong> {MissingTemplateException}</p>
+</ul>
 
-<div class="highlight highlight-php"><pre><span class="c1">// The 'grounded' argument can bypass the home directory</span>
-<span class="nv">$myView</span> <span class="o">=</span> <span class="nx">H</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s2">"../my/template.html"</span><span class="p">,</span> <span class="p">[],</span> <span class="k">false</span><span class="p">);</span>
-</pre></div>
+<p><strong>Returns</strong> {String}<br>
+<strong>Throws</strong> {MissingTemplateException}</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-c">// The 'grounded' argument can bypass the home directory</span></span>
+<span class="pl-s2"><span class="pl-vo">$myView</span> <span class="pl-k">=</span> <span class="pl-s3">H</span><span class="pl-k">::</span>render(<span class="pl-s1"><span class="pl-pds">"</span>../my/template.html<span class="pl-pds">"</span></span>, [], <span class="pl-c1">false</span>);</span></pre></div>
 
 <h2>
-<a name="sethomepath-remember" class="anchor" href="#sethomepath-remember"><span class="octicon octicon-link"></span></a>setHome(path, [remember])</h2>
+<a id="sethomepath-remember" class="anchor" href="#sethomepath-remember" aria-hidden="true"><span class="octicon octicon-link"></span></a>setHome(path, [remember])</h2>
 
 <p>Set a new default views directory.</p>
 
@@ -111,12 +107,13 @@
 <ul>
 <li>{String} path</li>
 <li>{Boolean} [remember] - True to retain this as the default directory for use with reset().</li>
-</ul><div class="highlight highlight-php"><pre><span class="c1">// Default is the same directory as eta.php.</span>
-<span class="nx">H</span><span class="o">::</span><span class="na">setHome</span><span class="p">(</span><span class="s2">"/path/to/my/templates/"</span><span class="p">);</span>
-</pre></div>
+</ul>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-c">// Default is the same directory in which eta.php file is placed.</span></span>
+<span class="pl-s2"><span class="pl-s3">H</span><span class="pl-k">::</span>setHome(<span class="pl-s1"><span class="pl-pds">"</span>/path/to/my/templates/<span class="pl-pds">"</span></span>);</span></pre></div>
 
 <h2>
-<a name="setbasepath" class="anchor" href="#setbasepath"><span class="octicon octicon-link"></span></a>setBase(path)</h2>
+<a id="setbasepath" class="anchor" href="#setbasepath" aria-hidden="true"><span class="octicon octicon-link"></span></a>setBase(path)</h2>
 
 <p>Set a new default base page template.</p>
 
@@ -124,45 +121,35 @@
 
 <ul>
 <li>{String} path - Complete path to new base template.</li>
-</ul><div class="highlight highlight-php"><pre><span class="c1">// Default is ./base.view</span>
-<span class="nx">H</span><span class="o">::</span><span class="na">setBase</span><span class="p">(</span><span class="s2">"/path/to/myBase.html"</span><span class="p">);</span>
-<span class="c1">// Now H::render(null) will use a new base template!</span>
-</pre></div>
+</ul>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-c">// Default is ./base.view</span></span>
+<span class="pl-s2"><span class="pl-s3">H</span><span class="pl-k">::</span>setBase(<span class="pl-s1"><span class="pl-pds">"</span>/path/to/myBase.html<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s2"><span class="pl-c">// Now H::render(null) will use a new base template!</span></span></pre></div>
 
 <h2>
-<a name="reset" class="anchor" href="#reset"><span class="octicon octicon-link"></span></a>reset()</h2>
+<a id="reset" class="anchor" href="#reset" aria-hidden="true"><span class="octicon octicon-link"></span></a>reset()</h2>
 
 <p>Reset Eta back to default home directory.</p>
 
-<div class="highlight highlight-php"><pre><span class="c1">// Use special templates directory temporarily.</span>
-<span class="nx">H</span><span class="o">::</span><span class="na">setHome</span><span class="p">(</span><span class="s2">"../path/to/other/templates/"</span><span class="p">);</span>
-<span class="nx">H</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s2">"some/newThing.tpl"</span><span class="p">);</span>
-<span class="nx">H</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s2">"and/another/template.html"</span><span class="p">);</span>
-<span class="c1">// Now reset home back to default for rest of project!</span>
-<span class="nx">H</span><span class="o">::</span><span class="na">reset</span><span class="p">();</span>
-</pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-c">// Use special templates directory temporarily.</span></span>
+<span class="pl-s2"><span class="pl-s3">H</span><span class="pl-k">::</span>setHome(<span class="pl-s1"><span class="pl-pds">"</span>../path/to/other/templates/<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s2"><span class="pl-s3">H</span><span class="pl-k">::</span>render(<span class="pl-s1"><span class="pl-pds">"</span>some/newThing.tpl<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s2"><span class="pl-s3">H</span><span class="pl-k">::</span>render(<span class="pl-s1"><span class="pl-pds">"</span>and/another/template.html<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s2"><span class="pl-c">// Now reset home back to default for rest of project!</span></span>
+<span class="pl-s2"><span class="pl-s3">H</span><span class="pl-k">::</span>reset();</span></pre></div>
 
-<hr><ul>
-<li>By Dan Cobb: <a href="mailto:cobbdb@gmail.com">cobbdb@gmail.com</a>
-</li>
-<li>License: MIT</li>
-</ul>
+<hr>
+
+<p>By Dan Cobb: <a href="mailto:cobbdb@gmail.com">cobbdb@gmail.com</a> - <a href="http://petitgibier.sytes.net">petitgibier.sytes.net</a><br>
+License: MIT</p>
       </section>
-
       <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/cobbdb">cobbdb</a> can be found on <a href="https://github.com/cobbdb/eta">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
+        <p>This project is maintained by <a href="https://github.com/cobbdb">cobbdb</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
-
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
