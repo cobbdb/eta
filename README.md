@@ -1,6 +1,7 @@
 # Eta
 ### A lightweight PHP templating engine designed for rapid prototypes and small-scale web applications.
-Version **2.0.4**
+
+[![Latest Stable Version](https://poser.pugx.org/cobbdb/eta/version.svg)](https://packagist.org/packages/cobbdb/eta) [![Total Downloads](https://poser.pugx.org/cobbdb/eta/downloads.svg)](https://packagist.org/packages/cobbdb/eta) [![Monthly Downloads](https://poser.pugx.org/cobbdb/eta/d/monthly.svg)](https://packagist.org/packages/cobbdb/eta) [![License](https://poser.pugx.org/cobbdb/eta/license.svg)](https://packagist.org/packages/cobbdb/eta)
 
 ---
 The symbol for the Greek capital letter eta is H. Eta is often used in math as the symbol for efficiency.
