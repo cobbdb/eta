@@ -1,0 +1,24 @@
+{
+  "name": "eta",
+  "version": "2.0.5",
+  "description": "Lightweight PHP templating.",
+  "main": "H.php",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cobbdb/eta.git"
+  },
+  "keywords": [
+    "templating",
+    "engine",
+    "fast",
+    "small",
+    "simple",
+    "templates"
+  ],
+  "author": "Dan Cobb <cobbdb@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cobbdb/eta/issues"
+  },
+  "homepage": "https://github.com/cobbdb/eta#readme"
+}
