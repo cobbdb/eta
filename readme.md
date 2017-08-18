@@ -17,7 +17,7 @@ This engine was designed for prototypes and small-scale web applications that ne
 
 ### Usage
 ###### Here is a simple hello world example:
-> ```php
+```php
 // index.php
 require_once "H.php";
 $who = "World";
@@ -31,7 +31,7 @@ Hello <?= $name ?>!
 ```
 
 ###### Example of a template include:
-> ```php
+```php
 <div id="myWidget">
     <?= H::render("neat/widget.html") ?>
 </div>
